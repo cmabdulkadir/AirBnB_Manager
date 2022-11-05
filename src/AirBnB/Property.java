@@ -3,9 +3,9 @@ package AirBnB;
 
 public class Property {
 
-    private String address;
     private int id;
     private String name;
+    private String address;
     private String city;
     private int zipcode;
     private int bedrooms;
@@ -15,15 +15,15 @@ public class Property {
 
 
     public Property(int id, String name, String address, String city, int zipcode, int bedrooms, int bathrooms, int guestCount, double nightlyRate) {
-        this.id = id;
-        this.address = address;
-        this.name = name;
-        this.city = city;
-        this.zipcode = zipcode;
-        this.bedrooms = bedrooms;
-        this.bathrooms = bathrooms;
-        this.nightlyRate = nightlyRate;
-        this.guestCount = guestCount;
+        setId(id); // same as --> this.id = id //initialize
+        setAddress(address);
+        setName(name);
+        setCity(city);
+        setZipcode(zipcode);
+        setBedrooms(bedrooms);
+        setBathrooms(bathrooms);
+        setGuestCount(guestCount);
+        setNightlyRate(nightlyRate);
 
     }
 
@@ -98,6 +98,7 @@ public class Property {
     public void setGuestCount(int guestCount) {
         this.guestCount = guestCount;
     }
+
 
     public void print(){
         System.out.println("\nProperty id: " + this.id);

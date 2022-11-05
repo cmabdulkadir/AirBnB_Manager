@@ -107,8 +107,21 @@ public class Manager {
             }
         }
     }
+    public void deletePropertyById(){
+        this.printProperties();
+        System.out.println("Which property iD would you like to delete?:");
+        int delete = Integer.parseInt(scan.nextLine());
+        //Property propertyToDelete;
+        for(Property deleteP: properties){
+            if(deleteP.getId() == delete){
+                properties.remove(deleteP);
+                System.out.println("---PROPERTY REMOVED---");
+                this.printProperties();
+            }
+            break;
 
-
+        }
+    }
 
 
 

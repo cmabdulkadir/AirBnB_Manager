@@ -29,6 +29,7 @@ public class Main {
                     break;
                 case 4:
                     //delete listing
+                    manage.deletePropertyById();
                     break;
                 case 5:
                     //EXIT
