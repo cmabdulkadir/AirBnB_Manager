@@ -17,6 +17,7 @@ public class Property implements Serializable {
 
 
     public Property(int id, String name, String address, String city, int zipcode, int bedrooms, int bathrooms, int guestCount, double nightlyRate) {
+<<<<<<< HEAD
         setId(id); // same as --> this.id = id //initialize
         setAddress(address);
         setName(name);
@@ -26,6 +27,17 @@ public class Property implements Serializable {
         setBathrooms(bathrooms);
         setGuestCount(guestCount);
         setNightlyRate(nightlyRate);
+=======
+        setId(id);
+        this.address = address;
+        this.name = name;
+        this.city = city;
+        this.zipcode = zipcode;
+        this.bedrooms = bedrooms;
+        this.bathrooms = bathrooms;
+        this.nightlyRate = nightlyRate;
+        this.guestCount = guestCount;
+>>>>>>> chaltu
 
     }
 
@@ -101,6 +113,23 @@ public class Property implements Serializable {
         this.guestCount = guestCount;
     }
 
+<<<<<<< HEAD
+=======
+    @Override
+    public String toString() {
+        return "Property{" +
+                "address='" + address + '\'' +
+                ", id=" + id +
+                ", name ='" + name + '\'' +
+                ", city='" + city + '\'' +
+                ", zipcode=" + zipcode +
+                ", bedrooms=" + bedrooms +
+                ", bathrooms=" + bathrooms +
+                ", nightlyRate=" + nightlyRate +
+                ", guestCount=" + guestCount +
+                '}';
+    }
+>>>>>>> chaltu
 
     public void print(){
         System.out.println("\nProperty id: " + this.id);
