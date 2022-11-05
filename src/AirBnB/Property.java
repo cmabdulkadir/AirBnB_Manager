@@ -10,11 +10,11 @@ public class Property {
     private int zipcode;
     private int bedrooms;
     private int bathrooms;
-    private double rate;
+    private double nightlyRate;
     private int guestCount;
 
 
-    public Property(int id, String name, String address, String city, int zipcode, int bedrooms, int bathrooms, int guestCount, double rate) {
+    public Property(int id, String name, String address, String city, int zipcode, int bedrooms, int bathrooms, int guestCount, double nightlyRate) {
         this.id = id;
         this.address = address;
         this.name = name;
@@ -22,7 +22,7 @@ public class Property {
         this.zipcode = zipcode;
         this.bedrooms = bedrooms;
         this.bathrooms = bathrooms;
-        this.rate = rate;
+        this.nightlyRate = nightlyRate;
         this.guestCount = guestCount;
 
     }
@@ -83,12 +83,12 @@ public class Property {
         this.bathrooms = bathrooms;
     }
 
-    public double getRate() {
-        return rate;
+    public double getNightlyRate() {
+        return nightlyRate;
     }
 
-    public void setRate(double rate) {
-        this.rate = rate;
+    public void setNightlyRate(double rate) {
+        this.nightlyRate = rate;
     }
 
     public int getGuestCount() {
@@ -101,10 +101,10 @@ public class Property {
 
     public void print(){
         System.out.println("\nProperty id: " + this.id);
-        System.out.println("Welcome to " + this.name);
+        System.out.println("Welcome to " + getName());
         System.out.println("Our address is: " + this.address +", " + this.city + " " + ""+ this.zipcode);
         System.out.println("Our property has " + ""+ this.bedrooms + " bedrooms, " + this.bathrooms + " bathrooms and can accommodate " + this.guestCount + " guests");
-        System.out.println("Nightly rate is:" + " $"+this.rate);
+        System.out.println("Nightly rate is:" + " $"+this.nightlyRate);
 
     }
 

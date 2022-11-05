@@ -20,14 +20,16 @@ public class Main {
                     break;
                 case 2:
                     //Print all listing
+                    manage.printProperties();
 
                     break;
                 case 3:
                     //update listing
-
+                    manage.updatePropertyById();
+                    break;
                 case 4:
                     //delete listing
-
+                    break;
                 case 5:
                     //EXIT
                     System.exit(1);
