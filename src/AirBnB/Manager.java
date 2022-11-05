@@ -1,5 +1,4 @@
 package AirBnB;
-
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.*;
@@ -10,12 +9,10 @@ public class Manager {
 
 
     Scanner scan = new Scanner(System.in);
-
     //creating and initializing an arrayList to hold all properties
     ArrayList<Property> properties = new ArrayList<>();
 
 
-    //CREATE A OPTION METHOD
     public void optionMenu() {
         System.out.println("\nType (1) to Create property listing");
         System.out.println("Type (2) to read all property listings");
@@ -26,9 +23,16 @@ public class Manager {
 
     public void welcome() {
         System.out.println("Welcome to AirBnB Host🏠 - Where you can manage all your property listings!");
+        System.out.println("\nWould you like to load your properties?: Type (Y) for Yes or (N) for No");
+        String answer = scan.nextLine();
+        if(answer.equalsIgnoreCase("y")){
+            load();
+
+        } else if (answer.equalsIgnoreCase("n")) {
+
+        }
     }
 
-    // CREATING A METHOD TO CREATE PROPERTY LISTINGS
     public void createListing() {
         System.out.println("What is the properties iD?:");
         int id = Integer.parseInt(scan.nextLine());
@@ -48,18 +52,14 @@ public class Manager {
         int guestCount = Integer.parseInt(scan.nextLine());
         System.out.println("What is the nightly rate?:");
         double rate = Double.parseDouble(scan.nextLine());
-        properties.add(new Property(id, name, address, city, zipcode, bedrooms, bathrooms, guestCount, rate));
-        //save(properties.add(new Property(id, name, address, city, zipcode, bedrooms, bathrooms, guestCount, rate)));
-        //save();
+        properties.add(new Property( id, name, address, city, zipcode, bedrooms, bathrooms, guestCount, rate));
+        save();
         //load();
-        //p.sav
     }
 
-    // Method to read all the properties
     public void printProperties() {
         for (Property p : properties) {
-            //save(properties);
-            //load();
+            load();
             p.print();
         }
     }
@@ -126,10 +126,57 @@ public class Manager {
                 this.printProperties();
             }
             break;
-
         }
     }
 
+    public void save(){
+        try{
+            FileOutputStream fileOut = new FileOutputStream("properties.ser");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            for (Property p :properties) {
+                out.writeObject(properties);
+            }
+            out.close();
+            fileOut.close();
 
-}
+        }catch (IOException i) {
+            i.printStackTrace();
+        }
+    }
+
+    public void load() {
+
+        ArrayList<Property> properties = new ArrayList<>(); // this create an object of type employee to receive data from file or return
+
+        try {
+            FileInputStream file = new FileInputStream("properties.ser");
+            ObjectInputStream in = new ObjectInputStream(file);
+
+            properties = (ArrayList<Property>) in.readObject();
+
+            in.close();
+            file.close();
+
+            System.out.println(properties);
+
+        } catch (IOException | ClassNotFoundException i) {
+            i.printStackTrace();
+        }
+    }
+
+        public void exit() {
+            System.out.println("Would you like to save your properties?:  Type(Y) for yes or (N) for no");
+            String response = scan.nextLine();
+            if (response.equalsIgnoreCase("y")) {
+                save();
+                System.out.println("---PROPERTIES SAVED---");
+                System.exit(1);
+
+            } else if (response.equalsIgnoreCase("n")) {
+                System.out.println("GOODBYE");
+                System.exit(1);
+            }
+        }
+    }
+
 

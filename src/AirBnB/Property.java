@@ -17,7 +17,7 @@ public class Property implements Serializable {
 
 
     public Property(int id, String name, String address, String city, int zipcode, int bedrooms, int bathrooms, int guestCount, double nightlyRate) {
-        this.id = id;
+        setId(id);
         this.address = address;
         this.name = name;
         this.city = city;
@@ -99,6 +99,21 @@ public class Property implements Serializable {
 
     public void setGuestCount(int guestCount) {
         this.guestCount = guestCount;
+    }
+
+    @Override
+    public String toString() {
+        return "Property{" +
+                "address='" + address + '\'' +
+                ", id=" + id +
+                ", name ='" + name + '\'' +
+                ", city='" + city + '\'' +
+                ", zipcode=" + zipcode +
+                ", bedrooms=" + bedrooms +
+                ", bathrooms=" + bathrooms +
+                ", nightlyRate=" + nightlyRate +
+                ", guestCount=" + guestCount +
+                '}';
     }
 
     public void print(){

@@ -8,6 +8,7 @@ public class Main {
         Manager manage = new Manager();
 
         manage.welcome();
+        //manage.load();
         int option = -1;
         do {
             manage.optionMenu();
@@ -17,11 +18,13 @@ public class Main {
                 case 1:
                     //create listing
                     manage.createListing();
+                    //manage.save();
+                    //manage.load();
                     break;
                 case 2:
                     //Print all listing
                     manage.printProperties();
-
+                    //manage.load();
                     break;
                 case 3:
                     //update listing
@@ -32,8 +35,7 @@ public class Main {
                     manage.deletePropertyById();
                     break;
                 case 5:
-                    //EXIT
-                    System.exit(1);
+                    manage.exit();
                     break;
 
             }
