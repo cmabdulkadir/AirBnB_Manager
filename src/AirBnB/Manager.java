@@ -50,4 +50,67 @@ public class Manager {
         properties.add(new Property(id, name, address, city, zipcode, bedrooms, bathrooms, guestCount, rate));
     }
 
+    // Method to read all the properties
+    public void printProperties() {
+        for (Property p : properties) {
+            p.print();
+        }
+    }
+
+    public Property findPropertyById(int id) {
+        for (Property home : properties) {
+            if (home.getId() == id) {
+                return home;
+            } else {
+                continue;
+            }
+        }
+        return null;
+    }
+
+    public void updatePropertyById() {
+        this.printProperties();
+        System.out.println("\nWhich property id would you like to update?:");
+        int update = Integer.parseInt(scan.nextLine());
+        Property property = this.findPropertyById(update);
+        for (Property updateProperty : this.properties) {
+            if (updateProperty.getId() == update) {
+                System.out.println("What is the properties iD?:");
+                int id = Integer.parseInt(scan.nextLine());
+                property.setId(id);
+                System.out.println("What is the property name?:");
+                String name = scan.nextLine();
+                property.setName(name);
+                System.out.println("What is the properties address?:");
+                String address = scan.nextLine();
+                property.setAddress(address);
+                System.out.println("What is the properties city and state?:");
+                String city = scan.nextLine();
+                property.setCity(city);
+                System.out.println("What is the properties zipcode?:");
+                int zipcode = Integer.parseInt(scan.nextLine());
+                property.setZipcode(zipcode);
+                System.out.println("How many bedrooms does the property have?:");
+                int bedrooms = Integer.parseInt(scan.nextLine());
+                property.setBedrooms(bedrooms);
+                System.out.println("How many bathrooms does the property have?:");
+                int bathrooms = Integer.parseInt(scan.nextLine());
+                property.setBathrooms(bathrooms);
+                System.out.println("How many guest can the property accommodate?:");
+                int guestCount = Integer.parseInt(scan.nextLine());
+                property.setGuestCount(guestCount);
+                System.out.println("What is the nightly rate?:");
+                double rate = Double.parseDouble(scan.nextLine());
+                property.setNightlyRate(rate);
+                this.printProperties();
+                break;
+            }
+        }
+    }
+
+
+
+
+
+
 }
