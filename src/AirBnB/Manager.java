@@ -179,8 +179,4 @@ public class Manager {
         }
     }
 
-<<<<<<< HEAD
-}
-=======
->>>>>>> chaltu
 
