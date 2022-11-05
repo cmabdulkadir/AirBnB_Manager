@@ -1,7 +1,9 @@
 package AirBnB;
 
 
-public class Property {
+import java.io.Serializable;
+
+public class Property implements Serializable {
 
     private String address;
     private int id;

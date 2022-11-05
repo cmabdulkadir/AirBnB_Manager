@@ -2,6 +2,8 @@ package AirBnB;
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.io.*;
+
 
 
 public class Manager {
@@ -46,13 +48,18 @@ public class Manager {
         int guestCount = Integer.parseInt(scan.nextLine());
         System.out.println("What is the nightly rate?:");
         double rate = Double.parseDouble(scan.nextLine());
-
         properties.add(new Property(id, name, address, city, zipcode, bedrooms, bathrooms, guestCount, rate));
+        //save(properties.add(new Property(id, name, address, city, zipcode, bedrooms, bathrooms, guestCount, rate)));
+        //save();
+        //load();
+        //p.sav
     }
 
     // Method to read all the properties
     public void printProperties() {
         for (Property p : properties) {
+            //save(properties);
+            //load();
             p.print();
         }
     }
@@ -107,10 +114,22 @@ public class Manager {
             }
         }
     }
+    public void deletePropertyById(){
+        this.printProperties();
+        System.out.println("Which property iD would you like to delete?:");
+        int delete = Integer.parseInt(scan.nextLine());
+        //Property propertyToDelete;
+        for(Property deleteP: properties){
+            if(deleteP.getId() == delete){
+                properties.remove(deleteP);
+                System.out.println("---PROPERTY REMOVED---");
+                this.printProperties();
+            }
+            break;
 
-
-
-
+        }
+    }
 
 
 }
+
