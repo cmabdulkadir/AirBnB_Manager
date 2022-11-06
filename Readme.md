@@ -18,7 +18,7 @@ Airbnb manager is an application designed for property owners to manage all thei
 -[Repo](https://github.com/cmabdulkadir/AirBnB_Manager)
 
 ## Screenshots
-- ![Airbnb Welcome Page](/Users/chaltuabdulkadir/Desktop/JAVA PROJECTS/AirBnB Manager/AirBnB Manager/src/screenshot.png)
+- ![Airbnb Welcome Page](src/screenshot.png)
 
 ## Tools Utilized
 - JDK
