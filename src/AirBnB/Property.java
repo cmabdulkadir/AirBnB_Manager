@@ -17,7 +17,7 @@ public class Property implements Serializable {
 
 
     public Property(int id, String name, String address, String city, int zipcode, int bedrooms, int bathrooms, int guestCount, double nightlyRate) {
-<<<<<<< HEAD
+        super();
         setId(id); // same as --> this.id = id //initialize
         setAddress(address);
         setName(name);
@@ -27,18 +27,6 @@ public class Property implements Serializable {
         setBathrooms(bathrooms);
         setGuestCount(guestCount);
         setNightlyRate(nightlyRate);
-=======
-        setId(id);
-        this.address = address;
-        this.name = name;
-        this.city = city;
-        this.zipcode = zipcode;
-        this.bedrooms = bedrooms;
-        this.bathrooms = bathrooms;
-        this.nightlyRate = nightlyRate;
-        this.guestCount = guestCount;
->>>>>>> chaltu
-
     }
 
     public String getAddress() {
@@ -113,23 +101,16 @@ public class Property implements Serializable {
         this.guestCount = guestCount;
     }
 
-<<<<<<< HEAD
-=======
     @Override
     public String toString() {
-        return "Property{" +
-                "address='" + address + '\'' +
-                ", id=" + id +
-                ", name ='" + name + '\'' +
-                ", city='" + city + '\'' +
-                ", zipcode=" + zipcode +
-                ", bedrooms=" + bedrooms +
-                ", bathrooms=" + bathrooms +
-                ", nightlyRate=" + nightlyRate +
-                ", guestCount=" + guestCount +
-                '}';
+        return "Property id: " + id +
+                " \nProperty name: " + name +
+                " \nProperty Address: " + address +", "  + city + " " + ""+ zipcode +
+                " \nbedrooms: " + bedrooms +
+                " \nbathrooms: " + bathrooms +
+                " \nguestCount: " + guestCount +
+                " \nnightlyRate: " + "$"+ nightlyRate ;
     }
->>>>>>> chaltu
 
     public void print(){
         System.out.println("\nProperty id: " + this.id);
@@ -139,7 +120,5 @@ public class Property implements Serializable {
         System.out.println("Nightly rate is:" + " $"+this.nightlyRate);
 
     }
-
-
 }
 

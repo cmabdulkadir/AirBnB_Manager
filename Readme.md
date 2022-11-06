@@ -1,5 +1,5 @@
-# Airbnb Manager
-Airbnb manager is an application designed for property owners to manage all their Airbnb listings in one place.
+# Airbnb Host
+Airbnb Host is an application designed for property owners to manage all their Airbnb listings in one place.
 
 ## How to Use
 - Open the terminal and run the project. A menu option will be presented...
@@ -22,7 +22,6 @@ Airbnb manager is an application designed for property owners to manage all thei
 
 ## Tools Utilized
 - JDK
-- Java
 
 ## Credit
 - [Chaltu Abdulkadir](https://github.com/cmabdulkadir?tab=repositories)

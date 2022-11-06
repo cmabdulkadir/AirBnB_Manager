@@ -15,9 +15,9 @@ public class Manager {
 
     public void optionMenu() {
         System.out.println("\nType (1) to Create property listing");
-        System.out.println("Type (2) to read all property listings");
-        System.out.println("Type (3) to update property listing");
-        System.out.println("Type (4) to delete property listing");
+        System.out.println("Type (2) to Read all property listings");
+        System.out.println("Type (3) to Update property listing");
+        System.out.println("Type (4) to Delete property listing");
         System.out.println("Type (5) to Exit");
     }
 
@@ -59,7 +59,6 @@ public class Manager {
 
     public void printProperties() {
         for (Property p : properties) {
-            //load();
             p.print();
         }
     }
@@ -76,7 +75,7 @@ public class Manager {
     }
 
     public void updatePropertyById() {
-        this.printProperties();
+        printProperties();
         System.out.println("\nWhich property id would you like to update?:");
         int update = Integer.parseInt(scan.nextLine());
         Property property = this.findPropertyById(update);
@@ -116,7 +115,7 @@ public class Manager {
     }
     public void deletePropertyById(){
         this.printProperties();
-        System.out.println("Which property iD would you like to delete?:");
+        System.out.println("\nWhich property iD would you like to delete?:");
         int delete = Integer.parseInt(scan.nextLine());
         //Property propertyToDelete;
         for(Property deleteP: properties){
@@ -161,6 +160,7 @@ public class Manager {
 
         } catch (IOException | ClassNotFoundException i) {
             i.printStackTrace();
+            System.out.println("No listings exist! Please create a new listing");
         }
     }
 

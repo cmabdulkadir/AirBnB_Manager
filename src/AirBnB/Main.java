@@ -11,7 +11,7 @@ public class Main {
 
         manage.welcome();
         //manage.load();
-        int option = -1;
+        int option;
         do {
             manage.optionMenu();
             option = scanner.nextInt();
