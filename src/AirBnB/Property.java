@@ -29,10 +29,6 @@ public class Property implements Serializable {
         setNightlyRate(nightlyRate);
     }
 
-    public String getAddress() {
-        return address;
-    }
-
     public void setAddress(String address) {
         this.address = address;
     }
@@ -53,48 +49,24 @@ public class Property implements Serializable {
         this.name = name;
     }
 
-    public String getCity() {
-        return city;
-    }
-
     public void setCity(String city) {
         this.city = city;
-    }
-
-    public int getZipcode() {
-        return zipcode;
     }
 
     public void setZipcode(int zipcode) {
         this.zipcode = zipcode;
     }
 
-    public int getBedrooms() {
-        return bedrooms;
-    }
-
     public void setBedrooms(int bedrooms) {
         this.bedrooms = bedrooms;
-    }
-
-    public int getBathrooms() {
-        return bathrooms;
     }
 
     public void setBathrooms(int bathrooms) {
         this.bathrooms = bathrooms;
     }
 
-    public double getNightlyRate() {
-        return nightlyRate;
-    }
-
     public void setNightlyRate(double rate) {
         this.nightlyRate = rate;
-    }
-
-    public int getGuestCount() {
-        return guestCount;
     }
 
     public void setGuestCount(int guestCount) {
