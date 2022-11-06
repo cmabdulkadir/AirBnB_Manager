@@ -59,7 +59,7 @@ public class Manager {
 
     public void printProperties() {
         for (Property p : properties) {
-            load();
+            //load();
             p.print();
         }
     }
