@@ -10,7 +10,6 @@ public class Main {
         Manager manage = new Manager();
 
         manage.welcome();
-        //manage.load();
         int option;
         do {
             manage.optionMenu();
@@ -20,8 +19,6 @@ public class Main {
                 case 1:
                     //create listing
                     manage.createListing();
-                    //manage.save();
-                    //manage.load();
                     break;
                 case 2:
                     //Print all listing

@@ -103,7 +103,7 @@ public class Property implements Serializable {
 
     @Override
     public String toString() {
-        return "Property id: " + id +
+        return "\nProperty id: " + id +
                 " \nProperty name: " + name +
                 " \nProperty Address: " + address +", "  + city + " " + ""+ zipcode +
                 " \nbedrooms: " + bedrooms +

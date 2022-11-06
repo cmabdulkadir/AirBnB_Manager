@@ -76,6 +76,7 @@ public class Manager {
 
     public void updatePropertyById() {
         printProperties();
+        printProperties();
         System.out.println("\nWhich property id would you like to update?:");
         int update = Integer.parseInt(scan.nextLine());
         Property property = this.findPropertyById(update);
@@ -145,18 +146,19 @@ public class Manager {
 
     public void load() {
 
-        ArrayList<Property> properties = new ArrayList<>(); // this create an object of type employee to receive data from file or return
+        //ArrayList<Property> properties = new ArrayList<>(); // this create an object of type employee to receive data from file or return
 
         try {
             FileInputStream file = new FileInputStream("properties.ser");
             ObjectInputStream in = new ObjectInputStream(file);
 
-            properties = (ArrayList<Property>) in.readObject();
+            ArrayList<Property> properties1 = (ArrayList<Property>) in.readObject();
 
+                //properties = (ArrayList<Property>) in.readObject();
             in.close();
             file.close();
 
-            System.out.println(properties);
+            System.out.println(properties1.toString());
 
         } catch (IOException | ClassNotFoundException i) {
             i.printStackTrace();
