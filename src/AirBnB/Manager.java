@@ -52,12 +52,13 @@ public class Manager {
         int guestCount = Integer.parseInt(scan.nextLine());
         System.out.println("What is the nightly rate?:");
         double rate = Double.parseDouble(scan.nextLine());
-        properties.add(new Property( id, name, address, city, zipcode, bedrooms, bathrooms, guestCount, rate));
         save();
+        properties.add(new Property( id, name, address, city, zipcode, bedrooms, bathrooms, guestCount, rate));
         //load();
     }
 
     public void printProperties() {
+        //load();
         for (Property p : properties) {
             p.print();
         }
@@ -75,7 +76,6 @@ public class Manager {
     }
 
     public void updatePropertyById() {
-        printProperties();
         printProperties();
         System.out.println("\nWhich property id would you like to update?:");
         int update = Integer.parseInt(scan.nextLine());
@@ -132,9 +132,10 @@ public class Manager {
     public void save(){
         try{
             FileOutputStream fileOut = new FileOutputStream("properties.ser");
+
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            for (Property p :properties) {
-                out.writeObject(properties);
+            for (Property p :this.properties) {
+                out.writeObject(this.properties);
             }
             out.close();
             fileOut.close();
