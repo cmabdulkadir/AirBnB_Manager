@@ -8,7 +8,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Manager manage = new Manager();
-
         manage.welcome();
         int option;
         do {

@@ -5,7 +5,7 @@ import java.io.*;
 
 
 
-public class Manager {
+public class Manager implements Serializable  {
 
 
     Scanner scan = new Scanner(System.in);
@@ -52,9 +52,8 @@ public class Manager {
         int guestCount = Integer.parseInt(scan.nextLine());
         System.out.println("What is the nightly rate?:");
         double rate = Double.parseDouble(scan.nextLine());
-        save();
         properties.add(new Property( id, name, address, city, zipcode, bedrooms, bathrooms, guestCount, rate));
-        //load();
+        save(properties);
     }
 
     public void printProperties() {
@@ -129,14 +128,15 @@ public class Manager {
         }
     }
 
-    public void save(){
+    public void save(ArrayList <Property> properties){
         try{
             FileOutputStream fileOut = new FileOutputStream("properties.ser");
 
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            for (Property p :this.properties) {
-                out.writeObject(this.properties);
+            for (Property p : properties) {
+                out.writeObject(properties);
             }
+
             out.close();
             fileOut.close();
 
@@ -147,15 +147,13 @@ public class Manager {
 
     public void load() {
 
-        //ArrayList<Property> properties = new ArrayList<>(); // this create an object of type employee to receive data from file or return
-
+        ArrayList<Property> properties1 = new ArrayList<>(); // this create an object of type employee to receive data from file or return
         try {
             FileInputStream file = new FileInputStream("properties.ser");
             ObjectInputStream in = new ObjectInputStream(file);
 
-            ArrayList<Property> properties1 = (ArrayList<Property>) in.readObject();
-
-                //properties = (ArrayList<Property>) in.readObject();
+            //ArrayList<Property> properties1 = (ArrayList<Property>) in.readObject();
+            properties1 = (ArrayList<Property>) in.readObject();
             in.close();
             file.close();
 
@@ -171,7 +169,7 @@ public class Manager {
             System.out.println("Would you like to save your properties?:  Type(Y) for yes or (N) for no");
             String response = scan.nextLine();
             if (response.equalsIgnoreCase("y")) {
-                save();
+                save(properties);
                 System.out.println("---PROPERTIES SAVED---");
                 System.exit(1);
 
