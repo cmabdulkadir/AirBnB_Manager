@@ -147,17 +147,15 @@ public class Manager implements Serializable  {
 
     public void load() {
 
-        ArrayList<Property> properties1 = new ArrayList<>(); // this create an object of type employee to receive data from file or return
         try {
             FileInputStream file = new FileInputStream("properties.ser");
             ObjectInputStream in = new ObjectInputStream(file);
 
-            //ArrayList<Property> properties1 = (ArrayList<Property>) in.readObject();
-            properties1 = (ArrayList<Property>) in.readObject();
+            properties = (ArrayList<Property>) in.readObject();
             in.close();
             file.close();
 
-            System.out.println(properties1.toString());
+            System.out.println(properties.toString());
 
         } catch (IOException | ClassNotFoundException i) {
             i.printStackTrace();
